@@ -28,9 +28,9 @@ void main(int argc, char* argv[])
     printf("==>file:%s\n",str_logfile);
     FILE* fp= fopen(str_logfile,"w");
     for(i=0;i<n; i++){
-        
-        s = (char*) malloc(sizeof(char) * nSize* 1024);  // basic unit : KB
-        memset(s,1, nSize * 1024);
+        int mBlock = 10;
+        s = (char*) malloc(sizeof(char) * nSize* mBlock);  // basic unit : KB
+        memset(s,1, nSize * mBlock);
         // memset(s,0, 1024);
         sprintf(s,"%06d: TEST String...\n",i);
         fputs(s,fp);
